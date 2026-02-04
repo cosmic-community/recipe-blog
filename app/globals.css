@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-dark-950 text-dark-100 antialiased;
+  }
+  
+  ::selection {
+    @apply bg-accent-500/30 text-white;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-gradient-to-r from-accent-400 to-accent-600 bg-clip-text text-transparent;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-accent-500/10;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-dark-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-dark-700 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-dark-600;
+}
+
+/* Markdown content styling */
+.prose-dark {
+  @apply prose prose-invert prose-orange max-w-none;
+}
+
+.prose-dark h1,
+.prose-dark h2,
+.prose-dark h3,
+.prose-dark h4 {
+  @apply text-dark-50 font-semibold;
+}
+
+.prose-dark p {
+  @apply text-dark-200;
+}
+
+.prose-dark li {
+  @apply text-dark-200;
+}
+
+.prose-dark strong {
+  @apply text-dark-50 font-semibold;
+}
+
+.prose-dark a {
+  @apply text-accent-400 hover:text-accent-300 transition-colors;
+}
+
+.prose-dark ul {
+  @apply space-y-1;
+}
+
+.prose-dark ol {
+  @apply space-y-3;
+}
